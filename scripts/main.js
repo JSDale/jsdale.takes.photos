@@ -16,7 +16,7 @@ function displayPhotos()
     {
         var imageSrc = imageLocations[i];
         var imgElement = document.createElement("img");
-        imgElement.style.height = '6.5%';
+        imgElement.style.width = '40%';
         imgElement.style.padding = '0.5% 0.5% 0.5% 0.5%';
         imgElement.src = imageSrc;
 
