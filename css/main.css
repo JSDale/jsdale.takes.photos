@@ -1,3 +1,9 @@
+@font-face 
+{
+    font-family: 'Tangerine-Bold';
+    src: url('fonts/Tangerine-Bold.ttf') format('truetype');
+}
+
 html
 {
     width: 100%;
@@ -24,20 +30,20 @@ body
 
 h1
 {
-    font-size: 2vw;
+    font-size: 5vw;
+    padding-right: 3vw;
 }
 
 #heading
 {
-    font-family: 'Lucida Handwriting', cursive;
+    font-family: Tangerine-Bold;
     padding-left: 10%;
-    padding-bottom: 20%;
     padding-right: 5%;
 }
 
 .name
 {
-    padding-bottom: 20%;
+    padding-bottom: 2%;
 }
 
 .socialIcons
@@ -78,20 +84,19 @@ h1
 
     #heading
     {
-        font-family: 'Lucida Handwriting', cursive;
-        padding-left: 10%;
+        padding-left: 2.5%;
         padding-bottom: 5%;
         padding-right: 5%;
     }
 
     h1
     {
-        font-size: 3.5vw;
+        font-size: 6.5vw;
     }
 
     .name
     {
-        padding-bottom: 2%;
+        padding-bottom: 0%;
     }
 
     .socialIcons
@@ -101,7 +106,7 @@ h1
 
     #photoContainer img
     {
-        width: 70vw;
+        width: 85vw;
         padding: 0.5% 0.5% 0.5% 0.5%;
     }
 }
