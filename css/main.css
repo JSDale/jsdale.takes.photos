@@ -9,6 +9,11 @@ body
     min-height: 100vh;
 }
 
+h1
+{
+    font-size: 2vw;
+}
+
 .flexContainer
 {
     display: flex;
@@ -18,13 +23,13 @@ body
 
 .left-column
 {
-    flex-basis:15%;
+    flex-basis:10%;
     border-style: none solid none none;
 }
 
 .right-column
 {
-    flex-basis: 85%;
+    flex-basis: 90%;
 }
 
 #photoContainer
@@ -32,14 +37,31 @@ body
     padding-left: 2%;
 }
 
+#photoContainer img
+{
+    width: 32%;
+    padding: 0.5% 0.5% 0.5% 0.5%;
+}
+
 #heading
 {
     font-family: 'Lucida Handwriting', cursive;
     padding-left: 10%;
     padding-bottom: 20%;
+    padding-right: 5%;
 }
 
 .name
 {
-    padding-bottom: 50%;
+    padding-bottom: 
+    20%;
+}
+
+@media only screen and (max-width: 800px)
+{
+    #photoContainer img
+    {
+        width: 80%;
+        padding: 0.5% 0.5% 0.5% 0.5%;
+    }
 }
