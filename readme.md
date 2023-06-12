@@ -1,3 +1,3 @@
 # Read Me
 
-[link](https://jsdale.github.io/jsdale.takes.photos/)
+[The link to the portfolio.](https://jsdale.github.io/jsdale.takes.photos/)
