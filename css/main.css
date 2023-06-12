@@ -70,6 +70,12 @@ h1
         min-width: 100%;
     }
 
+    .left-column
+    {
+        flex-basis:5%;
+        border-style: none none none none;
+    }
+
     #heading
     {
         font-family: 'Lucida Handwriting', cursive;
