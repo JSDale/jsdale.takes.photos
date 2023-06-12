@@ -9,11 +9,6 @@ body
     min-height: 100vh;
 }
 
-h1
-{
-    font-size: 2vw;
-}
-
 .flexContainer
 {
     display: flex;
@@ -25,6 +20,29 @@ h1
 {
     flex-basis:10%;
     border-style: none solid none none;
+}
+
+h1
+{
+    font-size: 2vw;
+}
+
+#heading
+{
+    font-family: 'Lucida Handwriting', cursive;
+    padding-left: 10%;
+    padding-bottom: 20%;
+    padding-right: 5%;
+}
+
+.name
+{
+    padding-bottom: 20%;
+}
+
+.socialIcons
+{
+    width: 20%;
 }
 
 .right-column
@@ -43,25 +61,41 @@ h1
     padding: 0.5% 0.5% 0.5% 0.5%;
 }
 
-#heading
-{
-    font-family: 'Lucida Handwriting', cursive;
-    padding-left: 10%;
-    padding-bottom: 20%;
-    padding-right: 5%;
-}
-
-.name
-{
-    padding-bottom: 
-    20%;
-}
-
 @media only screen and (max-width: 800px)
 {
+    .flexContainer
+    {
+        display: flex;
+        flex-direction: column;
+        min-width: 100%;
+    }
+
+    #heading
+    {
+        font-family: 'Lucida Handwriting', cursive;
+        padding-left: 10%;
+        padding-bottom: 5%;
+        padding-right: 5%;
+    }
+
+    h1
+    {
+        font-size: 3.5vw;
+    }
+
+    .name
+    {
+        padding-bottom: 2%;
+    }
+
+    .socialIcons
+    {
+        width: 5%;
+    }
+
     #photoContainer img
     {
-        width: 80%;
+        width: 70vw;
         padding: 0.5% 0.5% 0.5% 0.5%;
     }
 }
