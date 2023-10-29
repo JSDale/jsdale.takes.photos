@@ -4,10 +4,10 @@ function displayPhotos()
     var container = document.getElementById("photoContainer");
 
     var imageLocations = [ 
-        "photos/_honeymoon1.jpg",
-        "photos/_honeymoon2.jpg",
-        "photos/_honeymoon3.jpg",
-        "photos/_honeymoon4.jpg",
+        "photos/honeymoon1.jpg",
+        "photos/honeymoon2.jpg",
+        "photos/honeymoon3.jpg",
+        "photos/honeymoon4.jpg",
         "photos/f1-1.jpg",
         "photos/f1-10.jpg",
         "photos/f1-11.jpg",
