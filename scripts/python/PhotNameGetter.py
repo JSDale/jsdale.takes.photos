@@ -6,4 +6,4 @@ print(directory)
 files = os.listdir(directory)
 
 for file in files:
-    print(f"\"photos\{file}\",")
+    print(f"\"photos/{file}\",")
