@@ -4,22 +4,29 @@ function displayPhotos()
     var container = document.getElementById("photoContainer");
 
     var imageLocations = [
-        "photos/DSC_0081.jpg",
-        "photos/DSC_0091.jpg",
-        "photos/DSC_0125.jpg",
-        "photos/DSC_0128.jpg",
-        "photos/IMG_0016.jpg",
-        "photos/IMG_0036.jpg",
-        "photos/IMG_0096.jpg",
-        "photos/IMG_0237.jpg",
-        "photos/IMG_9554.jpg",
-        "photos/IMG_9555.jpg",
-        "photos/IMG_9573.jpg",
-        "photos/IMG_9594.jpg",
-        "photos/IMG_9647.jpg",
-        "photos/IMG_9857.jpg",
-        "photos/IMG_9950.jpg",
-        "photos/IMG_9955.jpg"
+        "photos\_honeymoon1.jpg",
+        "photos\_honeymoon2.jpg",
+        "photos\_honeymoon3.jpg",
+        "photos\_honeymoon4.jpg",
+        "photos\f1-1.jpg",
+        "photos\f1-10.jpg",
+        "photos\f1-11.jpg",
+        "photos\f1-12.jpg",
+        "photos\f1-2.jpg",
+        "photos\f1-3.jpg",
+        "photos\f1-4.jpg",
+        "photos\f1-5.jpg",
+        "photos\f1-6.jpg",
+        "photos\f1-7.jpg",
+        "photos\f1-8.jpg",
+        "photos\f1-9.jpg",
+        "photos\haloween23-1.jpg",
+        "photos\haloween23-2.jpg",
+        "photos\haloween23-3.jpg",
+        "photos\haloween23-4.jpg",
+        "photos\haloween23-5.jpg",
+        "photos\haloween23-6.jpg",
+        "photos\haloween23-7.jpg"
     ];
 
     container.innerHTML = "";
