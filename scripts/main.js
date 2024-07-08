@@ -1,48 +1,59 @@
 
 function displayPhotos()
-{
-    var container = document.getElementById("photoContainer");
-
+{    
     var imageLocations = [ 
-        "photos/honeymoon1.jpg",
-        "photos/honeymoon2.jpg",
-        "photos/honeymoon3.jpg",
-        "photos/honeymoon4.jpg",
-        "photos/f1-1.jpg",
+        "photos/IMG_0744.jpg",
+        "photos/IMG_0746.jpg",
+        "photos/IMG_0757.jpg",
+        "photos/IMG_0768.jpg",
+        "photos/IMG_1154.jpg",
+        "photos/IMG_7936.jpg",
+        "photos/_DSC0402.jpg",
+        "photos/_MG_1312.jpg",
+        "photos/_MG_1340.jpg",
+        "photos/_MG_2157.jpg",
+        "photos/_MG_2176.jpg",
+        "photos/_MG_2227.jpg",
         "photos/f1-10.jpg",
-        "photos/f1-11.jpg",
-        "photos/f1-12.jpg",
-        "photos/f1-2.jpg",
-        "photos/f1-3.jpg",
         "photos/f1-4.jpg",
         "photos/f1-5.jpg",
         "photos/f1-6.jpg",
-        "photos/f1-7.jpg",
         "photos/f1-8.jpg",
         "photos/f1-9.jpg",
-        "photos/haloween23-1.jpg",
-        "photos/haloween23-2.jpg",
-        "photos/haloween23-3.jpg",
-        "photos/haloween23-4.jpg",
-        "photos/haloween23-5.jpg",
-        "photos/haloween23-6.jpg",
-        "photos/haloween23-7.jpg"
+        "photos/honeymoon1.jpg",
+        "photos/honeymoon2.jpg",
+        "photos/honeymoon3.jpg",
     ];
 
-    container.innerHTML = "";
+    var containerOne = document.getElementById("column1");
+    var containerTwo = document.getElementById("column2");
+    containerOne.innerHTML = "";
+    containerTwo.innerHTML = "";
 
+    var isColumnOne = true;
     for (var i = 0; i < imageLocations.length; i++)
     {
-        var imageSrc = imageLocations[i];
-        var imgElement = document.createElement("img");
-        imgElement.oncontextmenu = function(){return false};
-        imgElement.src = imageSrc;
-
-        container.appendChild(imgElement);
+        col = containerTwo;
+        if (isColumnOne)
+        {
+            col = containerOne;
+        }
+        var imageElement = CreateImage(imageLocations[i]);
+        col.appendChild(imageElement);
+        isColumnOne = !isColumnOne;
     }
+}
 
-    for (var i = 0; i < imageLocations.length; i++)
-    {
-        console.log(container.children[i]);
-    }
+function CreateImage(filepath)
+{
+    var imageSrc = filepath;
+    console.log(filepath);
+    var imgElement = document.createElement("img");
+    imgElement.style.display = 'flex'
+    imgElement.style.flexWrap = 'no-wrap'
+    imgElement.oncontextmenu = function(){return false};
+    imgElement.src = imageSrc;
+    var figure = document.createElement('figure');
+    figure.appendChild(imgElement);
+    return figure;
 }

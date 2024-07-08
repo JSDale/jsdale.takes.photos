@@ -1,6 +1,6 @@
 import os
 
-directory = f"{os.getcwd()}\\photos"
+directory = os.path.join(os.getcwd(), "photos")
 print(directory)
 
 files = os.listdir(directory)
