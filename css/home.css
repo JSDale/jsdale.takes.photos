@@ -20,11 +20,6 @@ img {
     flex-basis: 90%;
 }
 
-#photoContainer
-{
-    padding-left: 2%;
-}
-
 #photoContainer img
 {
     display: flex;
