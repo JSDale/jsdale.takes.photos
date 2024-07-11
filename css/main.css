@@ -46,7 +46,6 @@ h1
     width: 20%;
 }
 
-/* Add a black background color to the navigation */
 .nav {
     display: flex;
     background-color: #333;
@@ -55,7 +54,6 @@ h1
     margin-top: 20%;
   }
   
-  /* Style the links inside the navigation bar */
   .nav a {
     float: left;
     color: #f2f2f2;
@@ -65,13 +63,11 @@ h1
     font-size: 17px;
   }
   
-  /* Change the color of links on hover */
   .nav a:hover {
     background-color: #e5a1a1;
     color: black;
   }
   
-  /* Add a color to the active/current link */
   .nav a.active {
     background-color: gray;
     color: white;
@@ -113,4 +109,12 @@ h1
     {
         width: 5%;
     }
+
+    .nav {
+        display: flex;
+        background-color: #333;
+        overflow: hidden;
+        flex-direction: row;
+        margin-top: 2%;
+      }
 }
