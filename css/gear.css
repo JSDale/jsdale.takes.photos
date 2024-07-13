@@ -12,12 +12,39 @@
     margin-top: 2%;
 }
 
-.content div p
+.right-content
 {
     padding-right: 15%;
+    margin-left: 2%
 }
 
 h2
 {
     font-size: 32px;
+}
+
+h3
+{
+    margin-top: 8%;
+    font-size: 22px;
+}
+
+.gear-desc
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.gear-desc img
+{
+    width: 400px
+}
+
+@media only screen and (max-width: 800px)
+{
+    .gear-desc
+    {
+        display: flex;
+        flex-direction: column;
+    }
 }
