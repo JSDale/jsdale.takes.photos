@@ -43,7 +43,8 @@ h3
 
 .gear-desc img
 {
-    width: 400px
+    width: 30vw;
+    height: auto;
 }
 
 @media only screen and (max-width: 800px)
