@@ -35,6 +35,12 @@ h3
     flex-direction: row;
 }
 
+.gear-desc p
+{
+    font-size: 18px;
+    line-height: 30px;
+}
+
 .gear-desc img
 {
     width: 400px
