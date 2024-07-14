@@ -43,9 +43,10 @@ h3
 
 .gear-desc img
 {
-    width: 30vw;
+    width: 30%;
     height: auto;
     aspect-ratio: attr(width) / attr(height);
+    object-fit: cover;
 }
 
 @media only screen and (max-width: 800px)
