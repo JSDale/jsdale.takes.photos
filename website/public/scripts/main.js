@@ -1,30 +1,6 @@
 
-function displayPhotos()
-{    
-    var imageLocations = [ 
-        "photos/IMG_0744.jpg",
-        "photos/IMG_0746.jpg",
-        "photos/IMG_0757.jpg",
-        "photos/IMG_0768.jpg",
-        "photos/IMG_1154.jpg",
-        "photos/IMG_7936.jpg",
-        "photos/DSC0402.jpg",
-        "photos/MG_1312.jpg",
-        "photos/MG_1340.jpg",
-        "photos/MG_2157.jpg",
-        "photos/MG_2176.jpg",
-        "photos/MG_2227.jpg",
-        "photos/f1-10.jpg",
-        "photos/f1-4.jpg",
-        "photos/f1-5.jpg",
-        "photos/f1-6.jpg",
-        "photos/f1-8.jpg",
-        "photos/f1-9.jpg",
-        "photos/honeymoon1.jpg",
-        "photos/honeymoon2.jpg",
-        "photos/honeymoon3.jpg",
-    ];
-
+function displayPhotos(imageLocations)
+{   
     var containerOne = document.getElementById("column1");
     var containerTwo = document.getElementById("column2");
     containerOne.innerHTML = "";
