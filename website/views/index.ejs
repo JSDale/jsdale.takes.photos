@@ -6,12 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/home.css">
-    <script src="scripts/main.js">
-        document.addEventListener('DOMContentLoaded', function() 
-        {
-            displayPhotos(JSON.stringify(filenames));
-        });
-    </script>
     <title>JSDale Takes Photos</title>
 </head>
 <body>
@@ -33,5 +27,59 @@
 
         </div>
     </div>
+
+    <script>
+        function displayPhotos(imageLocationsJson)
+        {
+            var imageLocations = JSON.Parse(imageLocationsJson);
+            console.log('Entered display function');
+            var containerOne = document.getElementById("column1");
+            var containerTwo = document.getElementById("column2");
+            containerOne.innerHTML = "";
+            containerTwo.innerHTML = "";
+
+            var isColumnOne = true;
+            for (var i = 0; i < imageLocations.length; i++)
+            {
+                col = containerTwo;
+                if (isColumnOne)
+                {
+                    col = containerOne;
+                }
+                var imageElement = CreateImage(imageLocations[i]);
+                col.appendChild(imageElement);
+                isColumnOne = !isColumnOne;
+            }
+        }
+
+        function CreateImage(filepath)
+        {
+            try
+            {
+                var imageSrc = filepath;
+                console.log(filepath);
+                var imgElement = document.createElement("img");
+                imgElement.style.display = 'flex'
+                imgElement.style.flexWrap = 'no-wrap'
+                imgElement.oncontextmenu = function(){return false};
+                imgElement.src = imageSrc;
+                var figure = document.createElement('figure');
+                figure.appendChild(imgElement);
+                return figure;
+            }
+            catch(error)
+            {
+                console.log(error.message);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function()
+        {
+            console.log("loading pictures");
+            const json = <%= JSON.stringify(imageLocations) %>
+            console.log(json);
+            displayPhotos(json);
+        });
+    </script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 
-function displayPhotos(imageLocations)
+displayPhotos = function(imageLocations)
 {   
+    console.log('Entered display function');
     var imageLocationsLegacy = [ 
         "../photos/IMG_0744.jpg",
         "photos/IMG_0746.jpg",
