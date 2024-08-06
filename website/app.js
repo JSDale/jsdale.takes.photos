@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require('express');
 const Path = require('path');
 const app = express();
-const isDev = true;
+const isDev = false;
 const 
 {
     RELEASE_PORT,
