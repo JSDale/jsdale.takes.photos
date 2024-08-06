@@ -6,10 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/home.css">
-    <script src="scripts/main.js"></script>
+    <script src="scripts/main.js">
+        document.addEventListener('DOMContentLoaded', function() 
+        {
+            displayPhotos(JSON.stringify(filenames));
+        });
+    </script>
     <title>JSDale Takes Photos</title>
 </head>
-<body onload=<%= main.displayPhotos(imageLocations) %>
+<body>
     <div class="flexContainer">
         <div class="left-column" class="flexChild">
             <div id="heading">

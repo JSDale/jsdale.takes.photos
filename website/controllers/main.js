@@ -1,11 +1,11 @@
-import {HomeModel} from "../models/home_model.js";
 
 exports.main = async (req, res) =>
 {
-    var model = new HomeModel();
-    var imageFileNames = model.getFilenames("photos/");
+    const model = require('../models/home_model');
+    const filePath = `${__dirname}/../public/photos`;
+    console.log(filePath);
+    const imageFileNames = model.getFilenames(filePath);
     imageFileNames.forEach(element => {
-        element = "photos/" + element;
         console.log(element);
     });
     res.render("index", {imageLocations: imageFileNames});
