@@ -1,7 +1,10 @@
 
 function displayPhotos()
 {    
-    var imageLocations = [ 
+    var imageLocations = [
+        "photos/knowlton1.jpg", 
+        "photos/knowlton2.jpg", 
+        "photos/knowlton3.jpg", 
         "photos/IMG_0744.jpg",
         "photos/IMG_0746.jpg",
         "photos/IMG_0757.jpg",
