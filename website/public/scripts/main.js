@@ -1,37 +1,24 @@
 
-function displayPhotos()
-{    
-    var imageLocations = [
-        "photos/knowlton1.jpg", 
-        "photos/knowlton2.jpg", 
-        "photos/knowlton3.jpg", 
-        "photos/IMG_0744.jpg",
-        "photos/IMG_0746.jpg",
-        "photos/IMG_0757.jpg",
-        "photos/IMG_0768.jpg",
-        "photos/IMG_1154.jpg",
-        "photos/IMG_7936.jpg",
-        "photos/DSC0402.jpg",
-        "photos/MG_1312.jpg",
-        "photos/MG_1340.jpg",
-        "photos/MG_2157.jpg",
-        "photos/MG_2176.jpg",
-        "photos/MG_2227.jpg",
-        "photos/f1-10.jpg",
-        "photos/f1-4.jpg",
-        "photos/f1-5.jpg",
-        "photos/f1-6.jpg",
-        "photos/f1-8.jpg",
-        "photos/f1-9.jpg",
-        "photos/honeymoon1.jpg",
-        "photos/honeymoon2.jpg",
-        "photos/honeymoon3.jpg",
-    ];
+document.addEventListener('DOMContentLoaded', async function() {
+    await displayPhotos();
+  });
 
+async function displayPhotos()
+{    
+    console.debug("Getting photos...")
     var containerOne = document.getElementById("column1");
     var containerTwo = document.getElementById("column2");
     containerOne.innerHTML = "";
     containerTwo.innerHTML = "";
+    const response = await fetch("http://localhost:9090/filenames");
+    if (!response.ok)
+    {
+        console.error('Could not get filenames');
+        return;
+    }
+    const data = await response.json();
+    imageLocations = data;
+    console.log(imageLocations);
 
     var isColumnOne = true;
     for (var i = 0; i < imageLocations.length; i++)
@@ -41,7 +28,7 @@ function displayPhotos()
         {
             col = containerOne;
         }
-        var imageElement = CreateImage(imageLocations[i]);
+        var imageElement = CreateImage('photos/' + imageLocations[i]);
         col.appendChild(imageElement);
         isColumnOne = !isColumnOne;
     }

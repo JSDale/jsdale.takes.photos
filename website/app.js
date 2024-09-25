@@ -16,12 +16,14 @@ app.use(express.static(Path.join(__dirname, 'public')));
 const mainController = require("./controllers/main");
 const gearController = require('./controllers/gear');
 const twentyThreeArchive = require('./controllers/archive23');
+const filenamesController = require('./controllers/filenames');
 
 app.set("view engine", "ejs");
 
 app.get('/', mainController.main);
 app.get('/gear', gearController.main);
 app.get('/2023', twentyThreeArchive.main);
+app.get('/filenames', filenamesController.main);
 
 app.listen(port, () =>
 {
