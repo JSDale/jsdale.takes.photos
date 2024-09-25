@@ -28,6 +28,12 @@ async function displayPhotos()
         {
             col = containerOne;
         }
+        if (!imageLocations[i].endsWith(".png") && !imageLocations[i].endsWith(".jpg"))
+        {
+            console.debug("skipping over: " + imageLocations[i]);
+            continue;
+        }
+
         var imageElement = CreateImage('photos/' + imageLocations[i]);
         col.appendChild(imageElement);
         isColumnOne = !isColumnOne;
