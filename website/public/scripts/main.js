@@ -10,16 +10,26 @@ async function displayPhotos()
     var containerTwo = document.getElementById("column2");
     containerOne.innerHTML = "";
     containerTwo.innerHTML = "";
-    const response = await fetch("http://localhost:9090/filenames");
-    if (!response.ok)
+    var response;
+    try
     {
-        console.error('Could not get filenames');
-        return;
+        response = await fetch("http://localhost:3000/filenames");
+        if (!response.ok)
+        {
+            console.error('Could not get filenames on release port');
+            return;
+        }
     }
+    catch
+    {
+        response = await fetch("http://localhost:9090/filenames");
+        if (!response.ok) return;
+    }
+    
+
     const data = await response.json();
     imageLocations = data;
     console.log(imageLocations);
-
     var isColumnOne = true;
     for (var i = 0; i < imageLocations.length; i++)
     {
