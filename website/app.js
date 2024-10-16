@@ -4,8 +4,7 @@ const Path = require('path');
 const app = express();
 const 
 {
-    PORT,
-    BASE_URI
+    PORT
 } = process.env;
 
 var port = PORT;
