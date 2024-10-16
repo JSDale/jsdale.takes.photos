@@ -1,4 +1,4 @@
-require('dotenv').config({ path: `.env.${process.env.NODE_ENV}` || 'development'});
+require('dotenv').config({ path: `.env.${process.env.NODE_ENV}` || '.env.pub'});
 const express = require('express');
 const Path = require('path');
 const app = express();
