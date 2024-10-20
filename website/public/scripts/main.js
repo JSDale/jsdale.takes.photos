@@ -13,7 +13,7 @@ async function displayPhotos()
     var response;
     try
     {
-        response = await fetch("http://localhost:3000/filenames");
+        response = await fetch("http://pi-dev:3000/filenames");
         if (!response.ok)
         {
             console.error('Could not get filenames on release port');

@@ -5,7 +5,9 @@ exports.main = async (req, res) =>
     var filenames = readDirectory(currentDir);
     //console.debug(filenames);
     res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify(filenames));
+    const lst = JSON.stringify(filenames);
+    console.debug(lst);
+    return lst;
 }
 
 const fs = require('fs');

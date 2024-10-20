@@ -2,19 +2,25 @@ require('dotenv').config({ path: `.env.${process.env.NODE_ENV}` || '.env.pub'});
 const express = require('express');
 const Path = require('path');
 const app = express();
-const
+const 
 {
     PORT
 } = process.env;
 
 var port = PORT;
-if (typeof port == 'undefined')
+if (typeof(port) == 'undefined')
 {
     port = 3000;
 }
 
 app.use(express.static(Path.join(__dirname, 'views')));
 app.use(express.static(Path.join(__dirname, 'public')));
+app.use((req, res, next) =>
+{
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+});
+
 
 const mainController = require("./controllers/main");
 const gearController = require('./controllers/gear');
@@ -26,11 +32,7 @@ app.set("view engine", "ejs");
 app.get('/', mainController.main);
 app.get('/gear', gearController.main);
 app.get('/2023', twentyThreeArchive.main);
-app.get('/filenames', async (req, res) =>
-{
-    let names = await filenamesController.main(req, res);
-    res.end(names);
-});
+app.get('/filenames', filenamesController.main);
 
 app.listen(port, () =>
 {
