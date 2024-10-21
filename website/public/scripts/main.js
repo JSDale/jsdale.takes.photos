@@ -1,11 +1,13 @@
+import { Resources } from './resources.js';
 
 document.addEventListener('DOMContentLoaded', async function() {
     await displayPhotos();
   });
 
 async function displayPhotos()
-{    
+{
     console.debug("Getting photos...")
+    const baseUrl = Resources.BaseUrl;
     var containerOne = document.getElementById("column1");
     var containerTwo = document.getElementById("column2");
     containerOne.innerHTML = "";
@@ -13,7 +15,8 @@ async function displayPhotos()
     var response;
     try
     {
-        response = await fetch("http://pi-dev:3000/filenames");
+        console.debug(`using ${baseUrl}`);
+        response = await fetch(`${baseUrl}/filenames`);
         if (!response.ok)
         {
             console.error('Could not get filenames on release port');
@@ -25,15 +28,14 @@ async function displayPhotos()
         response = await fetch("http://localhost:9090/filenames");
         if (!response.ok) return;
     }
-    
 
     const data = await response.json();
-    imageLocations = data;
+    let imageLocations = data;
     console.log(imageLocations);
     var isColumnOne = true;
     for (var i = 0; i < imageLocations.length; i++)
     {
-        col = containerTwo;
+        let col = containerTwo;
         if (isColumnOne)
         {
             col = containerOne;

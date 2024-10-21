@@ -26,11 +26,7 @@ app.set("view engine", "ejs");
 app.get('/', mainController.main);
 app.get('/gear', gearController.main);
 app.get('/2023', twentyThreeArchive.main);
-app.get('/filenames', async (req, res) =>
-{
-    let names = await filenamesController.main(req, res);
-    res.end(names);
-});
+app.get('/filenames', filenamesController.main);
 
 app.listen(port, () =>
 {
