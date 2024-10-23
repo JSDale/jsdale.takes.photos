@@ -1,4 +1,4 @@
 export class Resources
 {
-    static BaseUrl = "http://pi-dev:3000";
+    static BaseUrl = "https://www.jsdaletakesphotos.co.uk";
 }
