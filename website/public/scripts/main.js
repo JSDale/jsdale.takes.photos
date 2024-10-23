@@ -1,4 +1,4 @@
-import { Resources } from './resources.js';
+
 
 document.addEventListener('DOMContentLoaded', async function() {
     await displayPhotos();
@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', async function() {
 async function displayPhotos()
 {
     console.debug("Getting photos...")
-    const baseUrl = Resources.BaseUrl;
     var containerOne = document.getElementById("column1");
     var containerTwo = document.getElementById("column2");
     containerOne.innerHTML = "";
@@ -15,8 +14,7 @@ async function displayPhotos()
     var response;
     try
     {
-        console.debug(`using ${baseUrl}`);
-        response = await fetch(`${baseUrl}/filenames`);
+        response = await fetch('/filenames');
         if (!response.ok)
         {
             console.error('Could not get filenames on release port');
@@ -25,8 +23,7 @@ async function displayPhotos()
     }
     catch
     {
-        response = await fetch("http://localhost:9090/filenames");
-        if (!response.ok) return;
+        console.debug('could not get photos...')
     }
 
     const data = await response.json();
