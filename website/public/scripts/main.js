@@ -23,6 +23,7 @@ window.DisplayPhotos = async function displayPhotos(fetchRequest)
 
     const data = await response.json();
     let imageLocations = data;
+    imageLocations.sort((a, b) => a.localeCompare(b));
     console.log(imageLocations);
     var isColumnOne = true;
     for (var i = 0; i < imageLocations.length; i++)
