@@ -1,10 +1,5 @@
 
-
-document.addEventListener('DOMContentLoaded', async function() {
-    await displayPhotos();
-  });
-
-async function displayPhotos()
+window.DisplayPhotos = async function displayPhotos(fetchRequest)
 {
     console.debug("Getting photos...")
     var containerOne = document.getElementById("column1");
@@ -14,7 +9,7 @@ async function displayPhotos()
     var response;
     try
     {
-        response = await fetch('/filenames');
+        response = await fetch(fetchRequest);
         if (!response.ok)
         {
             console.error('Could not get filenames on release port');
