@@ -1,0 +1,16 @@
+services:
+  app:
+    build: ./website
+    container_name: jsdale-takes-photos
+    expose:
+      - "3000"
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - ./default.txt:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
