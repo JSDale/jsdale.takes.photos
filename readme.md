@@ -1,3 +1,5 @@
 # Read Me
 
-[The link to the portfolio.](https://jsdale.github.io/jsdale.takes.photos/)
+## Running Instructions
+
+To start the service `cd` into `/website/` and run `npm run dev`, or `npm run start`. 

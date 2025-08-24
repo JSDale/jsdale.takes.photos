@@ -1,10 +1,5 @@
 
-
-document.addEventListener('DOMContentLoaded', async function() {
-    await displayPhotos();
-  });
-
-async function displayPhotos()
+window.DisplayPhotos = async function displayPhotos(fetchRequest)
 {
     console.debug("Getting photos...")
     var containerOne = document.getElementById("column1");
@@ -14,7 +9,7 @@ async function displayPhotos()
     var response;
     try
     {
-        response = await fetch('/filenames');
+        response = await fetch(fetchRequest);
         if (!response.ok)
         {
             console.error('Could not get filenames on release port');
@@ -27,8 +22,10 @@ async function displayPhotos()
     }
 
     const data = await response.json();
+    console.log(data);
     let imageLocations = data;
-    console.log(imageLocations);
+    imageLocations.sort((a, b) => a.localeCompare(b));
+    console.log("sorted: " + imageLocations);
     var isColumnOne = true;
     for (var i = 0; i < imageLocations.length; i++)
     {
@@ -43,7 +40,7 @@ async function displayPhotos()
             continue;
         }
 
-        var imageElement = CreateImage('photos/' + imageLocations[i]);
+        var imageElement = CreateImage(imageLocations[i]);
         col.appendChild(imageElement);
         isColumnOne = !isColumnOne;
     }
