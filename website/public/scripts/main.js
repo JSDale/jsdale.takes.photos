@@ -22,9 +22,10 @@ window.DisplayPhotos = async function displayPhotos(fetchRequest)
     }
 
     const data = await response.json();
+    console.log(data);
     let imageLocations = data;
     imageLocations.sort((a, b) => a.localeCompare(b));
-    console.log(imageLocations);
+    console.log("sorted: " + imageLocations);
     var isColumnOne = true;
     for (var i = 0; i < imageLocations.length; i++)
     {
@@ -39,7 +40,7 @@ window.DisplayPhotos = async function displayPhotos(fetchRequest)
             continue;
         }
 
-        var imageElement = CreateImage('photos/' + imageLocations[i]);
+        var imageElement = CreateImage(imageLocations[i]);
         col.appendChild(imageElement);
         isColumnOne = !isColumnOne;
     }
