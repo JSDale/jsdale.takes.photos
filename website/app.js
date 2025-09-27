@@ -47,6 +47,19 @@ app.get('/gear', gearController.main);
 app.get('/2023', twentyThreeArchive.main);
 app.get('/filenames', filenamesController.main);
 
+app.use((req, res, next) => {
+    if (req.url.includes('/etc') || req.url.includes('phpmyadmin'))
+    {
+        return res.status(403).send('Forbidden');
+    }
+
+    next()
+});
+
+app.use((req, res) => {
+    res.redirect('/');
+});
+
 app.listen(port, () =>
 {
     console.debug("starting on: " + port);
