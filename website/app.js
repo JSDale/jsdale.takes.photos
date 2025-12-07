@@ -7,13 +7,14 @@ const
 {
     PORT
 } = process.env;
-const logPathPrefix = path.join(__dirname, "logs");
-if (!fs.existsSync(logPathPrefix))
-{
-    fs.mkdirSync(logPathPrefix, {recursive: true});
-}
 
-const logFile = path.join(logPathPrefix, "visits.log");
+//const logPathPrefix = path.join(__dirname, "logs");
+//if (!fs.existsSync(logPathPrefix))
+//{
+//    fs.mkdirSync(logPathPrefix, {recursive: true});
+//}
+
+//const logFile = path.join(logPathPrefix, "visits.log");
 
 var port = PORT;
 if (typeof port == 'undefined')
@@ -21,16 +22,16 @@ if (typeof port == 'undefined')
     port = 3000;
 }
 
-app.use((req, _, next) => {
-    const userAgent = req.get("User-Agent") || "Unknown";
-    const logEntry = `${new Date().toUTCString()} - IP:${req.ip} - METH:${req.method} URL:${req.originalUrl} - UA:${userAgent}\n`;
-    fs.appendFile(logFile, logEntry, (err) =>
-    {
-        if (err) console.error("Error logging visit: ", err);
-    });
-
-    next();
-});
+//app.use((req, _, next) => {
+//    const userAgent = req.get("User-Agent") || "Unknown";
+//    const logEntry = `${new Date().toUTCString()} - IP:${req.ip} - METH:${req.method} URL:${req.originalUrl} - UA:${userAgent}\n`;
+//   fs.appendFile(logFile, logEntry, (err) =>
+//    {
+//        if (err) console.error("Error logging visit: ", err);
+//    });
+//
+//    next();
+//});
 
 app.use(express.static(path.join(__dirname, 'views')));
 app.use(express.static(path.join(__dirname, 'public')));
