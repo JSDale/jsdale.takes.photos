@@ -9,6 +9,8 @@
 # https://github.com/docker/awesome-compose
 services:
   app:
+    container_name: jsdale-takes-photos
+    image: jsdale-takes-photos-app
     build:
       context: .
     environment:
