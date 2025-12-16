@@ -5,7 +5,8 @@ const fs = require('fs');
 const app = express();
 const
 {
-    PORT
+    PORT,
+    HOST
 } = process.env;
 
 //const logPathPrefix = path.join(__dirname, "logs");
@@ -20,6 +21,12 @@ var port = PORT;
 if (typeof port == 'undefined')
 {
     port = 3000;
+}
+
+var host = HOST;
+if (typeof host == 'undefined')
+{
+    host = "0.0.0.0"
 }
 
 //app.use((req, _, next) => {
@@ -40,6 +47,7 @@ const mainController = require("./controllers/main");
 const gearController = require('./controllers/gear');
 const twentyThreeArchive = require('./controllers/archive23');
 const filenamesController = require('./controllers/filenames');
+const { hostname } = require('os');
 
 app.set("view engine", "ejs");
 
@@ -61,7 +69,7 @@ app.use((req, res) => {
     res.redirect('/');
 });
 
-app.listen(port, () =>
+app.listen(port, host, () =>
 {
-    console.debug("starting on: " + port);
+    console.debug("starting on: " + host + ":" + port);
 });
