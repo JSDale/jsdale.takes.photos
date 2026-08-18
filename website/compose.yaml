@@ -16,6 +16,19 @@ services:
     environment:
       NODE_ENV: pub
       KEY: pub
-    ports:
-      - 3000:3000
     restart: unless-stopped
+
+  # Dials out to Cloudflare so the app is reachable without forwarding a port
+  # on the router. Create the tunnel and its public hostname (pointing at
+  # http://app:3000) in the Cloudflare Zero Trust dashboard, then put the
+  # token it gives you into a .env file next to this compose.yaml as
+  # TUNNEL_TOKEN=... (see readme.md).
+  cloudflared:
+    container_name: jsdale-takes-photos-tunnel
+    image: cloudflare/cloudflared:latest
+    command: tunnel --no-autoupdate run
+    environment:
+      TUNNEL_TOKEN: ${TUNNEL_TOKEN}
+    restart: unless-stopped
+    depends_on:
+      - app
